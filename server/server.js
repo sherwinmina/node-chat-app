@@ -9,15 +9,25 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
+app.use(express.static(publicPath));
+
 io.on('connnection', (socket) => {
   console.log('New User connnected');
+
+  socket.emit('newEmail', {
+    from: 'test@test.com',
+    text: 'Hey, Yo man',
+    createdAt: 123
+  });
+
+  socket.on('createEmail', (newEmail) => {
+    console.log('createEmail', newEmail);
+  });
 
   socket.on('disconnect', () => {
     console.log('Disconnected from Server');
   });
 });
-
-app.use(express.static(publicPath));
 
 server.listen(port, () => {
   console.log(`Server is up on port ${port}`);
