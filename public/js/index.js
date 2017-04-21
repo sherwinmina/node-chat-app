@@ -2,6 +2,11 @@
 
   socket.on('connect', function () {
     console.log('Connected to server');
+
+    socket.emit('createEmail', {
+      to: 'jen@example.com',
+      text: 'Hey. This is Sherwin'
+    });
   });
 
   socket.on('disconnect', function () {

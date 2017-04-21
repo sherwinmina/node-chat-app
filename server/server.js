@@ -11,7 +11,7 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
-io.on('connnection', (socket) => {
+io.on('connection', (socket) => {
   console.log('New User connnected');
 
   socket.emit('newEmail', {
@@ -19,7 +19,7 @@ io.on('connnection', (socket) => {
     text: 'Hey, Yo man',
     createdAt: 123
   });
-
+console.log('line22');
   socket.on('createEmail', (newEmail) => {
     console.log('createEmail', newEmail);
   });
