@@ -10,7 +10,11 @@ var server = http.createServer(app);
 var io = socketIO(server);
 
 io.on('connnection', (socket) => {
-console.log('New User connnected')
+  console.log('New User connnected');
+
+  socket.on('disconnect', () => {
+    console.log('User was disconnected')
+  });
 });
 
 app.use(express.static(publicPath));
