@@ -9,6 +9,10 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
+io.on('connnection', (socket) => {
+console.log('New User connnected')
+});
+
 app.use(express.static(publicPath));
 
 server.listen(port, () => {
