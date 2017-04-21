@@ -14,7 +14,7 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
   console.log('New User connnected');
 
-  socket.emit('newEmail', {
+  socket.emit('newMessage', {
     from: 'test@test.com',
     text: 'Hey, Yo man',
     createdAt: 123
