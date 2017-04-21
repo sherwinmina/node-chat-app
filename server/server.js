@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
     text: 'Hey, Yo man',
     createdAt: 123
   });
-console.log('line22');
+
   socket.on('createEmail', (newEmail) => {
     console.log('createEmail', newEmail);
   });
