@@ -9,7 +9,7 @@ describe('generateMessage', () => {
     var message = generatemessage(from, text);
 
     expect(message.createdAt).toBeA('number');
-    expect(message).toInclude({from, text})
+    expect(message).toInclude({from, text});
     // store res in variable
     // assert from match
     // asset text matchMediaassert createdAt
