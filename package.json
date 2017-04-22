@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/sherwinmina/node-chat-app#readme",
   "dependencies": {
+    "expect": "^1.20.2",
     "express": "^4.15.2",
+    "mocha": "^3.2.0",
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
