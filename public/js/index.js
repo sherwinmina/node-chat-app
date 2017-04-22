@@ -12,3 +12,10 @@
 socket.on('newMessage', function (message) {
   console.log('New Message', message);
 });
+
+socket.emit('createMessage', {
+  from: 'Doggie',
+  text: 'Hi'
+}, function (data) {
+  console.log('Go it!', data);
+});
