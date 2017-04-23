@@ -19,3 +19,7 @@ socket.emit('createMessage', {
 }, function (data) {
   console.log('Go it!', data);
 });
+
+jQuery('#message-form').on('submit', function (e) {
+  e.preventDefault();
+});
