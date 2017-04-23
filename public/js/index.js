@@ -35,8 +35,11 @@ locationButton.on('click', function () {
     return alert('Geolocation not supported by your browser');
   }
 
-  navigator.geolocation.getCurrentPosition(function (getCurrentPosition) {
-    console.log(position);
+  navigator.geolocation.getCurrentPosition(function (position) {
+    socket.emit('createLocationMessage', {
+      latitude: position.coords.latitude,
+      longtitude: position.coords.longitude
+    });
   }, function () {
     alert('Unable to fetch location');
   });
