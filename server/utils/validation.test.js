@@ -12,4 +12,9 @@ describe('isReal String', () => {
     var res = isRealString('  ');
     expect(res).toBe(false);
   });
+
+  it('sshould allow string with a non-space characters', () => {
+    var res = isRealString(' Sherwin ');
+    expect(res).toBe(true);
+  });
 })
