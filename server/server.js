@@ -15,7 +15,7 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
   console.log('New User connnected');
 
-  socket.emit('newMessage', generateMessage ('Admin','Welcome!'));
+  socket.emit('newMessage', generateMessage ('Admin','Welcome to the Chat Box!'));
 
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New User Joined'))
 
