@@ -36,6 +36,28 @@ describe('Users', () => {
     expect(users.users).toEqual([user]);
   });
 
+  it('should remove a user', () => {
+
+  });
+
+  it('should not remove a user', () => {
+
+  });
+
+  it('should find a user', () => {
+    var userId = '2';
+    var user = users.getUser(userId);
+
+    expect(user.id).toBe(userId);
+  });
+
+  it('should not find a user', () => {
+    var userId = '99';
+    var user = users.getUser(userId);
+
+    expect(user).toNotExist();
+  });
+
   it('should return names for node course', () => {
     var userList = users.getUserList('Node Course');
 
