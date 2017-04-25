@@ -16,11 +16,6 @@ describe('Users', () => {
       id: '2',
       name: 'Donnie',
       room: 'Node Course'
-    },
-    {
-      id: '3',
-      name: 'Ken',
-      room: 'Node Course'
     }]
   });
 
@@ -69,6 +64,6 @@ describe('Users', () => {
   it('should return names for node course', () => {
     var userList = users.getUserList('Node Course');
 
-    expect(userList).toEqual(['Jessica', 'Donnie', 'Ken']);
+    expect(userList).toEqual(['Jessica', 'Donnie']);
   })
 });
